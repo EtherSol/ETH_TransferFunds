@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.6;
+pragma solidity ^0.8.4;
 
 contract transaction {
     
@@ -16,6 +16,20 @@ contract transaction {
     function mint(address receiver, uint amount) public {
         require(msg.sender == minter);
         balances[receiver] += amount;
+    }
+
+    error InsufficientBalance(uint requested,uint avaliable);
+
+    function sent(address receiver, uint amount) public {
+        if (balances[msg.sender] < amount)
+            revert InsufficientBalance({
+                requested: amount,
+                avaliable: balances[msg.sender]
+            });
+
+        balances[msg.sender] -= amount;
+        balances[receiver] += amount;
+        emit Sent(msg.sender,receiver,amount);
     }
 
 }
