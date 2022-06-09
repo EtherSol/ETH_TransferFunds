@@ -14,4 +14,5 @@ def main():
     print(f"Processing transaction transfer of: {money_transfer}...")
     print(f"Minter balance is {transfer.balances(sender)}")
     print(f"Current balance from receiver is: {transfer.balances(rec)}")
+    
 main()
