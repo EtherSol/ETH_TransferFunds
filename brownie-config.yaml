@@ -1,6 +1,6 @@
 dotenv: .env
-network:
+networks:
   rinkeby: 
     eth_usd: "0x8dc7D5f8CF35cb7A203A19d7d74Ff43B1151795D"
 wallets:
-  from_key: ${"PRIVATE_KEY"}
+  from_key: ${PRIVATE_KEY}

@@ -1,6 +1,7 @@
-from brownie import accounts, transaction
+from brownie import transaction
+from scripts.helpful_scripts import get_account
 
-def main():
+def ganache():
     sender = accounts[0]
     rec = accounts[1]
     transfer = transaction.deploy({"from":sender})
@@ -15,4 +16,27 @@ def main():
     print(f"Minter balance is {transfer.balances(sender)}")
     print(f"Current balance from receiver is: {transfer.balances(rec)}")
     exit(0)
+
+def deploy_transfer():
+    account = get_account()
+    transfer = transaction.deploy({"from":account}, publish_source=True)
+    print(transfer.address)
+    exit(0)
+
+    # print("Hello World")
+    # if network.show_address() != "development":
+    #     price_feed_address = config["network"][network.showActive()][
+    #         "eth_usd"
+    #     ]
+
+    # print(price_feed_address)
+
+    # print(get_account(),get_account().balance())
+
+    # transfer = transaction.deploy({"from": get_account()})
+    # print(transfer.balances(get_account()))
+
+def main():
+    deploy_transfer()
+
 main()
