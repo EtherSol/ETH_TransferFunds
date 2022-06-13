@@ -1,0 +1,10 @@
+Terminology - Learning Syntax Terms Everyday 👾
+
+// How are we getting live prices from the Ethereum network
+AggregatorV3Interface is being used to get live prices of Ethereum 
+
+// Public vs External calls 
+Both Public and External can be called outside your contract
+Public calls uses more Gas compared to External calls 
+
+___Public vs External raises the question: "Memory vs. Calldata"___ 

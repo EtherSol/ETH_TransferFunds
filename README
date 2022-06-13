@@ -1,2 +1,0 @@
-// How are we getting live prices from the Ethereum network
-AggregatorV3Interface is being used to get live prices of Ethereum 
