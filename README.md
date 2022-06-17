@@ -9,4 +9,4 @@ Goal: When both accounts are able to verify the transactions
 
 Stack: Solidity, Python
 
-Level of Project: ⭐️ Easy
+Level of Project: ⭐️ Easy.
